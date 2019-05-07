@@ -1,0 +1,111 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@charset "UTF-8";
+
+@import "libs/skel";
+
+@include skel-breakpoints((
+	xlarge: "(max-width: 1680px)",
+	large: "(max-width: 1280px)",
+	medium: "(max-width: 980px)",
+	small: "(max-width: 736px)"
+));
+
+@include skel-layout((
+	reset: 'full',
+	boxModel: 'border',
+	grid: ( gutters: (40px, 40px) ),
+	conditionals: true,
+	containers: 1400px,
+	breakpoints: (
+		xlarge: (
+			containers: 1200px
+		),
+		large: (
+			containers: 960px,
+			grid: ( gutters: (25px, 25px) )
+		),
+		medium: (
+			containers: (90%, true)
+		),
+		small: (
+			containers: (100%, true),
+			grid: ( gutters: (20px, 20px) )
+		)
+	)
+));
+
+/* Global Variables */
+	$primary-color: #14074C;
+	$secondary-color: #0090C5;
+
+/* Basic */
+
+@-ms-viewport {
+	width: device-width;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	background-color: red;
+}
+
+img {
+	margin-bottom: -40px;
+}
+
+.main {
+	text-align: center;
+}
+
+#cillian {
+	width: 25%;
+}
+
+#loves {
+	width: 22%;
+}
+
+#likes, #addicted, #obsessed, #toomuch {
+	width: 45%;
+}
+
+#lego {
+	width: 18%;
+}
+
+#footer {
+	text-align: center;
+	color: white;
+}
+
+
+@include breakpoint(small) {	
+	img {
+		margin-bottom: 0px;
+	}
+	#cillian {
+		width: 50%;
+	}
+
+	#loves {
+		width: 44%;
+	}
+
+	#likes, #addicted, #obsessed, #toomuch {
+		width: 90%;
+	}
+
+	#lego {
+		width: 36%;
+	}
+}

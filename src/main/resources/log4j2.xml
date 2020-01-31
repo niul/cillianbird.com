@@ -24,7 +24,7 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Logger name="com.niulbird" level="debug">
+    <Logger name="com.cillianbird" level="debug">
     	<AppenderRef ref="APP_LOGS"/>
     </Logger>
     <Logger name="org.springframework" level="trace">

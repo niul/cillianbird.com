@@ -42,14 +42,14 @@
     
     <!-- Tiles support -->
     <bean id="tilesConfigurer"
-          class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+          class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
             <value>/WEB-INF/tiles.xml</value>
         </property>
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
     </bean>
 
     <!-- Locale support -->

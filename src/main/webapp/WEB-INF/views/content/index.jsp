@@ -11,5 +11,5 @@
 <script>
 	setTimeout(function(){
 		window.location.reload(1);
-	}, 5000);
+	}, 4000);
 </script>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+  	<RollingFile name="APP_LOGS"
+             fileName="${sys:catalina.home}/logs/cb.log"
+             filePattern="${sys:catalina.home}/logs/cb.log.%d{yyyy-MM-dd}.gz">
+      <PatternLayout pattern="%d{ABSOLUTE} %-5p [%X{IPADDRESS}] [%X{SESSIONID}] [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1"/>
+      </Policies>
+      <DefaultRolloverStrategy max="30"/>
+    </RollingFile>
+  	<RollingFile name="SPRING_LOGS"
+             fileName="${sys:catalina.home}/logs/cb-spring.log"
+             filePattern="${sys:catalina.home}/logs/cb-spring.log.%d{yyyy-MM-dd}.gz">
+      <PatternLayout pattern="%d{ABSOLUTE} %-5p [%X{IPADDRESS}] [%X{SESSIONID}] [%c{1}] %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1"/>
+      </Policies>
+      <DefaultRolloverStrategy max="30"/>
+    </RollingFile>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{ABSOLUTE} %-5p [%X{IPADDRESS}] [%X{SESSIONID}] [%c{1}] %m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Logger name="com.niulbird" level="debug">
+    	<AppenderRef ref="APP_LOGS"/>
+    </Logger>
+    <Logger name="org.springframework" level="trace">
+    	<AppenderRef ref="SPRING_LOGS"/>
+    </Logger>
+    <Logger name="net.sf.ehcache" level="trace">
+    	<AppenderRef ref="SPRING_LOGS"/>
+    </Logger>
+    <Root level="debug">
+      <AppenderRef ref="STDOUT"/>
+    </Root>
+  </Loggers>
+</Configuration>

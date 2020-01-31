@@ -5,7 +5,8 @@ import java.util.Random;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UIController {
-	private static final Logger log = Logger.getLogger(UIController.class);
+	private static final Logger log = LogManager.getLogger();
 
 	private static final String HOME = "home";
 	private static final String PAGE = "page";

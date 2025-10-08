@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+
+        <th:block th:if="${#strings.isEmpty(title)}">
+            <title th:text="${titlePrefix}"></title>
+            <meta property="og:title" th:content="${titlePrefix}" />
+            <meta name="twitter:title" th:content="${titlePrefix}" />
+            <meta itemprop="name" th:content="${titlePrefix}">
+        </th:block>
+        <th:block th:if="${not #strings.isEmpty(title)}">
+            <title th:text="${titlePrefix} + ' - ' + ${title}"></title>
+            <meta property="og:title" th:content="${titlePrefix} + ' - ' + ${title}" />
+            <meta name="twitter:title" th:content="${titlePrefix} + ' - ' + ${title}" />
+            <meta itemprop="name" th:content="${titlePrefix} + ' - ' + ${title}">
+        </th:block>
+
+        <meta property="og:type" content="website" />
+		<meta property="og:description" content="Test" th:content="#{header.metadata.description}" />
+		<meta property="og:url" content="URL" th:content="@{'/'}"/>
+		<meta property="og:site_name" content="SITE_NAME" th:content="#{header.metadata.name}"/>
+        
+        <meta property="og:image" th:content="@{/static/images/leaf.png}" />
+        <meta property="og:image:width" content="156" />
+        <meta property="og:image:height" content="156" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta property="fb:admins" content="672363827" />
+
+		<meta itemprop="description" content="Description" th:content="#{header.metadata.description}" />
+        <meta itemprop="image" th:content="@{/static/images/leaf.png}">
+
+		<meta name="description" content="Description" th:content="#{header.metadata.description}" />
+		<meta name="keywords" content="Description" th:content="#{header.metadata.keywords}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" th:href="@{/static/css/main.min.css}" />
+        <link rel="shortcut icon" th:href="@{/static/images/brick.ico}" />
+</head>
+</html>

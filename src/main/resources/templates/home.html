@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{includes/head :: head}">
+</head>
+
+<body>
+	<div id="site_content">
+
+		<div class="main">
+
+			<img th:src="@{/static/images/cillian.png}"
+				th:alt="#{index.cillianbird.alt}" id="cillian" /> <br /> <img
+				th:src="@{'/static/images/' + ${msg} + '.png'}" th:id="${msg}" /> <br />
+
+			<img th:src="@{/static/images/lego.png}" th:alt="#{index.lego.alt}"
+				id="lego" />
+		</div>
+
+	</div>
+	<script>
+		// This simple JavaScript remains unchanged as it contains no JSP/Thymeleaf variables.
+		setTimeout(function() {
+			window.location.reload(1);
+		}, 4000);
+	</script>
+	<div id="footer" th:replace="~{includes/footer :: footer}"></div>
+</body>
+</html>

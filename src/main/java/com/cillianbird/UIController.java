@@ -3,7 +3,7 @@ package com.cillianbird;
 import java.util.Properties;
 import java.util.Random;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
